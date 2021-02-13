@@ -808,6 +808,9 @@ class PurePath(object):
     def __class_getitem__(cls, type):
         return cls
 
+    def __contains__(self, key):
+        return key in self.__str__()
+
     drive = property(attrgetter('_drv'),
                      doc="""The drive prefix (letter or UNC path), if any.""")
 
